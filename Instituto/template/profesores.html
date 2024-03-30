@@ -1,0 +1,42 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+
+{% block contenido %}
+    <main class="container">
+        <h1 class="text-xl-center title"> Profesores </h1>
+
+        <a href="alta_profesor" class="btn btn-outline-success btn-sm">Nuevo Profesor</a>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Documento</th>
+                </tr>            
+            </thead>
+            <tbody>
+                {% for n in profesores %}
+                <tr>
+                    <td>{{n.id}}</td>
+                    <td>{{n.Nombre}}</td>
+                    <td>{{n.Apellido}}</td>
+                    <td>{{n.Documento}}</td>
+                </tr>
+
+                {% endfor %}
+                
+            </tbody>
+
+
+        </table>
+
+
+
+    </main>
+    
+
+{% endblock %}
